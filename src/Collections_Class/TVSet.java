@@ -95,6 +95,8 @@ class TVSet {
                 .anyMatch(TVSet -> TVSet.getMark() <= 4);
         System.out.println("7. All TVs have a mark more than 4? - " + markByers);
 
+        //This is a comment
+
         /*
         8.	Проверьте, есть ли телевизор стоимостью более 30 тыс. руб.(bool)
         9.	Найдите самый дорогой телевизор, используя maxBy().
