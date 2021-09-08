@@ -82,15 +82,18 @@ class TVSet {
                 .average();
         System.out.println("\n5. Average price TV:\n" + avgPrice.getAsDouble());
 
-        //6.	Найдите самый дешёвый телевизор с диагональю 32 дюйма.
+        /*//6.	Найдите самый дешёвый телевизор с диагональю 32 дюйма.
         OptionalInt cheapTV = list.stream()
                 .mapToInt(TVSet::getPrice)
                 .filter(x -> x == 32)
                 .min();
         System.out.println("\n3.Cheapest TV:\n" + cheapTV.getAsInt());
-        //This is comment
+         */
 
         //7.	Проверьте, у всех ли телевизоров оценка покупателей больше 4. (bool)
+        boolean markByers = list.stream()
+                .anyMatch(TVSet -> TVSet.getMark() <= 4);
+        System.out.println("7. All TVs have a mark more than 4? - " + markByers);
 
         /*
         8.	Проверьте, есть ли телевизор стоимостью более 30 тыс. руб.(bool)
