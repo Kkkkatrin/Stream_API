@@ -80,7 +80,7 @@ class TVSet {
         OptionalDouble avgPrice = list.stream()
                 .mapToInt(TVSet :: getPrice)
                 .average();
-        System.out.println("\n5. Average price TV:\n" + avgPrice.getAsDouble());
+        System.out.println("\n5. Average price TV: " + avgPrice.getAsDouble());
 
         /*//6.	Найдите самый дешёвый телевизор с диагональю 32 дюйма.
         OptionalInt cheapTV = list.stream()
@@ -95,8 +95,11 @@ class TVSet {
                 .anyMatch(TVSet -> TVSet.getMark() <= 4);
         System.out.println("7. All TVs have a mark more than 4? - " + markByers);
 
+        //8.	Проверьте, есть ли телевизор стоимостью более 30 тыс. руб.(bool)
+        boolean pricePredicate = list.stream().anyMatch(TVSet -> TVSet.getPrice() >= 30000);
+        System.out.println("8. Have TVs a price more than 30000? - " + pricePredicate);
+
         /*
-        8.	Проверьте, есть ли телевизор стоимостью более 30 тыс. руб.(bool)
         9.	Найдите самый дорогой телевизор, используя maxBy().
         10.	Разделите все телевизоры на 2 коллекции: с диагональю больше  и меньше 30 дюймов.
         11.	Сгруппируйте все телевизоры по маркам.
